@@ -1,6 +1,6 @@
 
-Sensor list
-Optical Sensors
-Rotary encoders
-IMU
-Limit swiches
+Sensor list  
+Optical Sensors  
+Rotary encoders  
+IMU  
+Limit switches  
