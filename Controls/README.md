@@ -1,6 +1,6 @@
 
 Sensor list  
-Optical Sensors  
-Rotary encoders  
+Optical Sensors - We are using the PAW3395 mouse sensor
+Rotary encoders - We are using the E6A2 
 IMU  
 Limit switches  
