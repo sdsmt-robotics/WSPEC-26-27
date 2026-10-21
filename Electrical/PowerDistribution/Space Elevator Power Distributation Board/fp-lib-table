@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Space_Elevator_PD_mosfet")(type "KiCad")(uri "${KIPRJMOD}/Space_Elevator_PD_mosfet.pretty")(options "")(descr ""))
+)
