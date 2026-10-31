@@ -1,51 +1,66 @@
 #include <Arduino.h>
 #include <ESP32Servo.h>
 
-Servo vescControl;
+Servo Motor_1;
+Servo Motor_2;
+Servo Motor_3;
+Servo Motor_4;
 
-const int VESC_PIN = 18; // Connected to 'SIN' on the receiver cable
+const int Motor_1_PIN = 35; // Connected to 'SIN' on the receiver cable
+const int Motor_2_PIN = 47; // Connected to 'SOUT' on the receiver cable
+const int Motor_3_PIN = 46; // Connected to 'SOUT' on the receiver cable
+const int Motor_4_PIN = 13; // Connected to 'SOUT' on the
+
+void write_Motors(int motor_1_value, int motor_2_value, int motor_3_value, int motor_4_value, int duration_ms);
+
+void write_Motors(int motor_1_value, int motor_2_value, int motor_3_value, int motor_4_value, int duration_ms) {
+  // Use Arduino's built-in delay function
+
+  Motor_1.writeMicroseconds(motor_1_value);
+  Motor_2.writeMicroseconds(motor_2_value); 
+  Motor_3.writeMicroseconds(motor_3_value);
+  Motor_4.writeMicroseconds(motor_4_value);
+  delay(duration_ms);
+}
 
 void setup() {
   Serial.begin(115200);
 
   // Allocate hardware PWM timers for ESP32
   ESP32PWM::allocateTimer(0);
-  vescControl.setPeriodHertz(50); // Standard 50Hz RC Servo frequency
+  Motor_1.setPeriodHertz(50); // Standard 50Hz RC Servo frequency
+  Motor_2.setPeriodHertz(50);
+  Motor_3.setPeriodHertz(50);
+  Motor_4.setPeriodHertz(50);
 
   // Attach pin with standard RC pulse limits: 1000us (min) to 2000us (max)
-  vescControl.attach(VESC_PIN, 1000, 2000);
+  Motor_1.attach(Motor_1_PIN, 1000, 2000);
+  Motor_2.attach(Motor_2_PIN, 1000, 2000);
+  Motor_3.attach(Motor_3_PIN, 1000, 2000);
+  Motor_4.attach(Motor_4_PIN, 1000, 2000);
 
   // Send neutral signal (1500us = center/stop) on boot
-  vescControl.writeMicroseconds(1500);
+  Motor_1.writeMicroseconds(1500);
+  Motor_2.writeMicroseconds(1500);
+  Motor_3.writeMicroseconds(1500);
+  Motor_4.writeMicroseconds(1500);
   delay(2000); // Allow VESC to initialize
 }
 
 void loop() {
-  Serial.println("Motor Neutral");
-  vescControl.writeMicroseconds(1500);
-  delay(3000);
 
+  Serial.println("Low Throttle forward");
+  write_Motors(1600, 1600, 1600, 1600, 5000);
 
   Serial.println("Low Throttle Backward");
-  vescControl.writeMicroseconds(1600);
-  delay(3000);
+  write_Motors(1470, 1470, 1470, 1470, 5000);
 
-  Serial.println("Low Throttle Forward");
-  vescControl.writeMicroseconds(1400);
-  delay(3000);
-
-  Serial.println("Half Throttle Forward");
-  vescControl.writeMicroseconds(1750);
-  delay(3000);
-
-    Serial.println("Half Throttle Backward");
-  vescControl.writeMicroseconds(1250);
-  delay(3000);
 
   Serial.println("Stopping");
-  vescControl.writeMicroseconds(1500);
-  delay(3000);
+  write_Motors(1500, 1500, 1500, 1500, 5000);
+
 }
+
 
 
 
@@ -119,3 +134,66 @@ void loop() {
 //
 //  delay(100); // 10 Hz refresh rate
 //}
+
+
+
+//#include <Arduino.h>
+//#include <ESP32Servo.h>
+//
+//Servo Motor_1;
+//Servo Motor_2;
+//Servo Motor_3;
+//Servo Motor_4;
+//
+//const int Motor_1_PIN = 18;
+//const int Motor_2_PIN = 19;
+//const int Motor_3_PIN = 20;
+//const int Motor_4_PIN = 21;
+//
+//
+//void setup() {
+//  Serial.begin(115200);
+//
+//  // Allocate hardware PWM timer
+//  ESP32PWM::allocateTimer(0);
+//  Motor_1.setPeriodHertz(50); // Standard 50Hz RC PWM frequency
+//  Motor_2.setPeriodHertz(50);
+//  Motor_3.setPeriodHertz(50);
+//  Motor_4.setPeriodHertz(50);
+//
+//  // Attach pin with SPARK MAX factory default pulse range (1000us - 2000us)
+//  Motor_1.attach(Motor_1_PIN, 1000, 2000);
+//  Motor_2.attach(Motor_2_PIN, 1000, 2000);
+//  Motor_3.attach(Motor_3_PIN, 1000, 2000);
+//  Motor_4.attach(Motor_4_PIN, 1000, 2000);
+//
+//  // Send neutral signal (1500us = center/stop) on boot
+//  Motor_1.writeMicroseconds(1500);
+//  Motor_2.writeMicroseconds(1500);
+//  Motor_3.writeMicroseconds(1500);
+//  Motor_4.writeMicroseconds(1500);
+//
+//  delay(1000);
+//  Serial.println("SPARK MAX PWM Control Ready.");
+//}
+//
+//void loop() {
+//  // Stop / Neutral (1500 us)
+//  Serial.println("Motor: Stop");
+//  write_Motors(1500, 1500, 1500, 1500, 3000);
+//  delay(3000);
+//
+//  // 25% Throttle Forward (1625 us)
+//  Serial.println("Motor: Forward 25%");
+//  write_Motors(1625, 1625, 1625, 1625, 3000);
+//
+//  // 50% Throttle Reverse (1250 us)
+//  Serial.println("Motor: Reverse 50%");
+//  write_Motors(1250, 1250, 1250, 1250, 3000);
+//
+//  // 75% Throttle Forward (1750 us)
+//  Serial.println("Motor: Forward 75%");
+//  write_Motors(1750, 1750, 1750, 1750, 3000);
+//}
+//
+//
