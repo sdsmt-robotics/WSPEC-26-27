@@ -7,8 +7,15 @@
 
 namespace {
 
+constexpr double kMouseDpi = 2600.0;
+constexpr double kMmPerInch = 25.4;
+
 int64_t totalX = 0;
 int64_t totalY = 0;
+
+double CountsToMillimeters(const int64_t counts) {
+    return (static_cast<double>(counts) / kMouseDpi) * kMmPerInch;
+}
 
 LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM wParam, LPARAM lParam) {
     if (message == WM_INPUT) {
@@ -32,9 +39,11 @@ LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM wParam, LPARAM lPa
             totalY += deltaY;
 
             if (deltaX != 0 || deltaY != 0) {
-                std::printf("total x=%lld  y=%lld\n",
-                            static_cast<long long>(totalX),
-                            static_cast<long long>(totalY));
+                const double totalMmX = CountsToMillimeters(totalX);
+                const double totalMmY = CountsToMillimeters(totalY);
+                std::printf("total x=%.3f mm  y=%.3f mm\n",
+                            totalMmX,
+                            totalMmY);
                 std::fflush(stdout);
             }
         }
@@ -99,7 +108,7 @@ int main() {
     }
 
     std::puts("Tracking raw mouse movement system-wide. Press Ctrl+C to stop.");
-    std::puts("Totals are relative mouse movement counts since the program started.");
+    std::puts("Totals are reported in millimeters using a 2600 dpi mouse.");
     std::fflush(stdout);
 
     MSG message = {};
