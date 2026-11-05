@@ -1,3 +1,4 @@
+#include <Arduino.h>
 #include "lcd.h"
 
 LiquidCrystal_AIP31068_I2C lcd(0x7C,16,2);
@@ -25,18 +26,21 @@ void setup_lcd() {
     
     lcd.home();
 
-    lcd.print("Joy: (000,000)")
-    lcd.setCursor(1,0)
-    lcd.print("Moving: XXXX")
+    lcd.print("Joy: (000,000)");
+    lcd.setCursor(1,0);
+    lcd.print("Moving: XXXX");
 }
 
 void update_joystick(JoystickOutput jo) {
-    lcd.setCursor(0,6)
-    lcd.print("%.2f,%.2f", jo.x,jo.y);
+    lcd.setCursor(0,6);
+    // 7 chars + 1 null
+    String output = String(jo.x,2) + String(",") + String(jo.y,2);
+
+    lcd.print(output);
 }
 
 void update_moving(State st) {
-    lcd.setCursor(1,8)
+    lcd.setCursor(1,8);
     switch(st) {
         case State::DOWN:
             lcd.print("DOWN");

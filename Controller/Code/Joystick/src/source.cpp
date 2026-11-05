@@ -1,3 +1,4 @@
+#include <Arduino.h>
 #include "pins.h"
 #include "joystick.h"
 #include "lcd.h"

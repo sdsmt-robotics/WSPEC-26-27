@@ -1,3 +1,4 @@
+#include <Arduino.h>
 #include "joystick.h"
 
 JoystickOutput readJoystick(int pinX, int pinY) {
