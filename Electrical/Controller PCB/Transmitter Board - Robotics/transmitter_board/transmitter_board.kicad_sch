@@ -6494,7 +6494,7 @@
 		(dnp no)
 		(uuid "9d2520c6-dade-453d-8766-f520cd30cd9a")
 		(property "Reference" "BT2"
-			(at 34.036 18.034 90)
+			(at 33.782 18.288 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6505,7 +6505,7 @@
 			)
 		)
 		(property "Value" "Battery"
-			(at 32.766 19.558 90)
+			(at 32.512 20.066 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6608,7 +6608,7 @@
 		(dnp no)
 		(uuid "aa8a29c1-57aa-4859-8611-fb485747c9d5")
 		(property "Reference" "BT1"
-			(at 24.13 18.542 90)
+			(at 23.622 18.288 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6619,7 +6619,7 @@
 			)
 		)
 		(property "Value" "Battery"
-			(at 22.606 19.812 90)
+			(at 22.098 19.812 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7359,10 +7359,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "cc700eb5-e1ad-445e-9f50-4d9888575b2b")
 		(property "Reference" "U1"
-			(at 45.72 21.59 0)
+			(at 45.72 23.876 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7372,7 +7371,7 @@
 			)
 		)
 		(property "Value" "AP63203WU"
-			(at 45.72 24.13 0)
+			(at 45.72 25.654 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7685,7 +7684,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "de2e8f4f-77d7-43d0-abd8-61ccbdf38972")
 		(property "Reference" "#PWR01"
 			(at 41.91 21.59 0)
@@ -7699,7 +7697,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 41.91 20.32 0)
+			(at 41.91 18.796 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
