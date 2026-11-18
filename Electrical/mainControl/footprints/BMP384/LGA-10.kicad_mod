@@ -1,0 +1,118 @@
+
+(footprint LGA-10 (layer F.Cu) (tedit 6AE922B4)
+  (descr "<h3>LGA10</h3><p>Specifications:<ul><li>Pin count: 10</li><li>Pin pitch: .5mm</li><li>Area: 2.0 x 2.0 mm</li></ul></p><p><a href=https://media.digikey.com/pdf/Data%20Sheets/Bosch/bst-bmp384-ds003.pdf>Datasheet referenced for footprint</a></p>")
+  (attr smd)
+  (fp_text reference REF** (at 0.0 -1.778 0) (layer F.SilkS)
+    (effects (font (size 0.48 0.48) (thickness 0.15)))
+  )
+  (fp_text value LGA-10 (at 0.0 1.778 0) (layer F.Fab)
+    (effects (font (size 0.48 0.48) (thickness 0.15)))
+  )
+  (pad 9 smd rect (at 0.7575 0.0) (size 0.285 0.27) (layers F.Cu F.Mask) (solder_mask_margin 0.102))
+  (pad 10 smd rect (at 0.7575 -0.5) (size 0.285 0.27) (layers F.Cu F.Mask) (solder_mask_margin 0.102))
+  (pad 8 smd rect (at 0.7575 0.5) (size 0.285 0.27) (layers F.Cu F.Mask) (solder_mask_margin 0.102))
+  (pad 4 smd rect (at -0.7575 0.0) (size 0.285 0.27) (layers F.Cu F.Mask) (solder_mask_margin 0.102))
+  (pad 3 smd rect (at -0.7575 -0.5) (size 0.285 0.27) (layers F.Cu F.Mask) (solder_mask_margin 0.102))
+  (pad 5 smd rect (at -0.7575 0.5) (size 0.285 0.27) (layers F.Cu F.Mask) (solder_mask_margin 0.102))
+  (pad 2 smd rect (at -0.25 -0.7575) (size 0.27 0.285) (layers F.Cu F.Mask) (solder_mask_margin 0.102))
+  (pad 1 smd rect (at 0.25 -0.7575) (size 0.27 0.285) (layers F.Cu F.Mask) (solder_mask_margin 0.102))
+  (pad 6 smd rect (at -0.25 0.7575) (size 0.27 0.285) (layers F.Cu F.Mask) (solder_mask_margin 0.102))
+  (pad 7 smd rect (at 0.25 0.7575) (size 0.27 0.285) (layers F.Cu F.Mask) (solder_mask_margin 0.102))
+  (fp_line (start 1.1 -1.1) (end 1.1 1.1) (layer F.SilkS) (width 0.127))
+  (fp_line (start 1.1 1.1) (end -1.1 1.1) (layer F.SilkS) (width 0.127))
+  (fp_line (start -1.1 1.1) (end -1.1 -1.1) (layer F.SilkS) (width 0.127))
+  (fp_line (start -1.1 -1.1) (end 1.1 -1.1) (layer F.SilkS) (width 0.127))
+  (fp_circle (center 1.282 -1.258) (end 1.3272531 -1.258) (layer F.SilkS) (width 0.175))
+  (fp_line (start -1.05 -1.05) (end 1.05 -1.05) (layer F.Fab) (width 0.127))
+  (fp_line (start 1.05 -1.05) (end 1.05 1.05) (layer F.Fab) (width 0.127))
+  (fp_line (start 1.05 1.05) (end -1.05 1.05) (layer F.Fab) (width 0.127))
+  (fp_line (start -1.05 1.05) (end -1.05 -1.05) (layer F.Fab) (width 0.127))
+  (fp_poly
+    (pts
+      (xy -1.2 -1.2)
+      (xy 1.2 -1.2)
+      (xy 1.2 1.2)
+      (xy -1.2 1.2)
+    ) (layer F.CrtYd) (width 0.01)
+  )
+  (fp_poly
+    (pts
+      (xy 0.64 -0.61)
+      (xy 0.875 -0.61)
+      (xy 0.875 -0.39)
+      (xy 0.64 -0.39)
+    ) (layer F.Paste) (width 0)
+  )
+  (fp_poly
+    (pts
+      (xy 0.64 -0.11)
+      (xy 0.875 -0.11)
+      (xy 0.875 0.11)
+      (xy 0.64 0.11)
+    ) (layer F.Paste) (width 0)
+  )
+  (fp_poly
+    (pts
+      (xy 0.64 0.39)
+      (xy 0.875 0.39)
+      (xy 0.875 0.61)
+      (xy 0.64 0.61)
+    ) (layer F.Paste) (width 0)
+  )
+  (fp_poly
+    (pts
+      (xy -0.64 0.61)
+      (xy -0.875 0.61)
+      (xy -0.875 0.39)
+      (xy -0.64 0.39)
+    ) (layer F.Paste) (width 0)
+  )
+  (fp_poly
+    (pts
+      (xy -0.64 0.11)
+      (xy -0.875 0.11)
+      (xy -0.875 -0.11)
+      (xy -0.64 -0.11)
+    ) (layer F.Paste) (width 0)
+  )
+  (fp_poly
+    (pts
+      (xy -0.64 -0.39)
+      (xy -0.875 -0.39)
+      (xy -0.875 -0.61)
+      (xy -0.64 -0.61)
+    ) (layer F.Paste) (width 0)
+  )
+  (fp_poly
+    (pts
+      (xy 0.14 -0.64)
+      (xy 0.14 -0.875)
+      (xy 0.36 -0.875)
+      (xy 0.36 -0.64)
+    ) (layer F.Paste) (width 0)
+  )
+  (fp_poly
+    (pts
+      (xy -0.36 -0.64)
+      (xy -0.36 -0.875)
+      (xy -0.14 -0.875)
+      (xy -0.14 -0.64)
+    ) (layer F.Paste) (width 0)
+  )
+  (fp_poly
+    (pts
+      (xy -0.14 0.64)
+      (xy -0.14 0.875)
+      (xy -0.36 0.875)
+      (xy -0.36 0.64)
+    ) (layer F.Paste) (width 0)
+  )
+  (fp_poly
+    (pts
+      (xy 0.36 0.64)
+      (xy 0.36 0.875)
+      (xy 0.14 0.875)
+      (xy 0.14 0.64)
+    ) (layer F.Paste) (width 0)
+  )
+)
