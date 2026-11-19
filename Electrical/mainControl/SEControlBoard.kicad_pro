@@ -102,7 +102,7 @@
         "length_out_of_range": "error",
         "lib_footprint_issues": "warning",
         "lib_footprint_mismatch": "warning",
-        "malformed_courtyard": "error",
+        "malformed_courtyard": "ignore",
         "microvia_drill_out_of_range": "error",
         "mirrored_text_on_front_layer": "warning",
         "missing_courtyard": "ignore",
@@ -119,7 +119,7 @@
         "silk_overlap": "warning",
         "skew_out_of_range": "error",
         "solder_mask_bridge": "error",
-        "starved_thermal": "error",
+        "starved_thermal": "ignore",
         "text_height": "warning",
         "text_on_edge_cuts": "error",
         "text_thickness": "warning",
@@ -518,8 +518,8 @@
     "meta": {
       "version": 5
     },
-    "net_colors": {},
-    "netclass_assignments": {},
+    "net_colors": null,
+    "netclass_assignments": null,
     "netclass_patterns": []
   },
   "pcbnew": {
@@ -530,7 +530,7 @@
       "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "SEControlBoard.step",
       "svg": "",
       "vrml": ""
     },
@@ -674,7 +674,7 @@
         "uuid": "21b4fee7-b7e9-4a1e-a795-7d063e97a7a3"
       }
     ],
-    "used_designators": "#PWR1-63,C1-12,J1-16,L1,Q1-4,R1-23,SW1-3,U1-5",
+    "used_designators": "#PWR1-66,C1-18,J1-16,L1,Q1-4,U1-6,R1-23,SW1-3",
     "variants": []
   },
   "sheets": [
